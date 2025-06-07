@@ -392,7 +392,27 @@ body {
     margin-top: 8px;
     text-align: center;
 }
-
+#contact {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+#contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#contact p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+#contact a {
+    color: DodgerBlue;
+    text-decoration: none;
+    font-weight: bold;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     header {
