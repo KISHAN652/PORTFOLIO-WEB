@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: white;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #ff4c68;
+    color: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Dark Mode Button */
+.dark-mode-btn {
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode-btn:hover {
+    background: #555;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+/* Portfolio Buttons */
+.cv-btn, .hire-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.cv-btn {
+    background: #ff4c68;
+    color: white;
+}
+
+.hire-btn {
+    background: #333;
+    color: white;
+}
+
+.cv-btn:hover, .hire-btn:hover {
+    opacity: 0.8;
+}
+
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Project Cards */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    background: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Project Images */
+.project-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-image {
+    opacity: 0.9;
+}
+
+/* Skills Progress Bars */
+.progress {
+    width: 100%;
+    background: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    background: #ff4c68;
+    width: 0;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+.html { width: 90%; }
+.css { width: 60%; }
+.js { width: 20%; }
+.python { width: 40%; }
+
+.animate-bars .bar {
+    animation: fillBars 2s forwards;
+}
+
+@keyframes fillBars {
+    from { width: 0; }
+    to { width: 100%; }
+}
