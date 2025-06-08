@@ -69,6 +69,28 @@ document.addEventListener("scroll", function () {
     }
 });
 // Mobile Navbar Toggle
+// const menuToggle = document.querySelector(".menu-toggle");
+// const nav = document.querySelector("nav");
+
+// menuToggle.addEventListener("click", () => {
+//     nav.classList.toggle("open");
+// });
+
+// // Dark Mode Toggle
+// document.getElementById("darkModeToggle").addEventListener("click", function () {
+//     document.body.classList.toggle("dark-mode");
+
+//     // Save preference in local storage
+//     localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+// });
+
+// // Load Dark Mode Preference
+// window.onload = function () {
+//     if (localStorage.getItem("theme") === "dark") {
+//         document.body.classList.add("dark-mode");
+//     }
+// };
+// Mobile Navbar Toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
 
@@ -76,18 +98,13 @@ menuToggle.addEventListener("click", () => {
     nav.classList.toggle("open");
 });
 
-// Dark Mode Toggle
-document.getElementById("darkModeToggle").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-
-    // Save preference in local storage
-    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+// Smooth Section Scroll Transition
+document.querySelectorAll("nav ul li a").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 });
-
-// Load Dark Mode Preference
-window.onload = function () {
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-    }
-};
 
