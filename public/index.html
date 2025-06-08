@@ -8,16 +8,25 @@
 </head>
 <body>
     <header>
-        <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
-        <div class="logo">Kishan's Portfolio</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo">Kishan's Portfolio</div>
+    <button id="menuToggle" class="menu-btn">☰</button>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="darkModeToggle" class="dark-mode-btn">🌙</button></li>
+        </ul>
+    </nav>
+    <nav id="navMenu">
+        <span id="closeMenu" class="close-menu">✖</span>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section id="hero">
         <h1>Hi, I'm Kishan</h1>
@@ -41,7 +50,7 @@
         <li>✅ Debugging & Problem-Solving</li>
     </ul>
 </section>
-<a href="/Kishan_cv.pdf" download>
+<a href="public/resume.pdf" download>
     <button class="cv-btn">Download CV</button>
 </a>
 <a href="mailto:gajjarsk111@gmail.com?subject=Job Inquiry&body=Hi Kishan,%0D%0A%0D%0AI'm interested in hiring you for a project. Let's discuss the details!">
@@ -51,28 +60,22 @@
     <h2>Projects</h2>
     <div class="project-grid">
         <div class="project-card">
-            <img src="/images/food-imagejpeg.jpeg" alt="Food App">
+            <img src="/public/images/food-imagejpeg.jpeg" alt="Food App">
             <h3>Food App Design</h3>
             <p>A modern food delivery app with **seamless navigation, dynamic filtering, and realistic imagery**.</p>
         </div>
 
         <div class="project-card">
-            <img src="/images/portfolio.jpeg" alt="Portfolio Website">
+            <img src="/public/images/portfolio.jpeg" alt="Portfolio Website">
             <h3>Portfolio Website</h3>
             <p>A **fully responsive personal portfolio** showcasing design and development skills.</p>
         </div>
 
         <div class="project-card">
-            <img src="/images/ecommerce-image.jpeg" alt="E-Commerce Platform">
+            <img src="/public/images/ecommerce-image.jpeg" alt="E-Commerce Platform">
             <h3>E-Commerce Platform</h3>
             <p>A stylish, **secure online shopping experience** with user-friendly checkout.</p>
         </div>
-
-        <!-- <div class="project-card">
-            <img src="#" alt="Admin Dashboard">
-            <h3>Admin Dashboard</h3>
-            <p>A **data-driven dashboard** for managing user interactions and business analytics.</p>
-        </div> -->
     </div>
 </section>
 <section id="skills">
@@ -100,25 +103,6 @@
     <p><strong>📧 Email:</strong> <a href="mailto:gajjarsk111@gmail.com">gajjarsk111@gmail.com</a></p>
     <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/kishan-sondagar-334a5a291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/Kishan sondager</a></p>
 </section>
-
-<!-- <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Interested in working together? **Let's connect!**</p>
-    
-    <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-    
-    <div class="social-links">
-        <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> |
-        <a href="https://github.com/yourprofile">GitHub</a> |
-        <a href="https://twitter.com/yourhandle">Twitter</a>
-    </div>
-</section> -->
-
     <script src="script.js"></script>
 </body>
 </html>
