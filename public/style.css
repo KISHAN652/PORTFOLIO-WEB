@@ -17,24 +17,32 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
-    position: relative;
     transition: color 0.3s ease-in-out;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
 
 /* Responsive Navbar */
@@ -46,7 +54,13 @@ nav ul li a {
     color: white;
     border: none;
 }
+
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -70,8 +84,74 @@ nav ul li a {
     nav.open ul {
         display: flex;
     }
-}
 
+    /* Make sections full width for better mobile visibility */
+    section {
+        width: 95%;
+        padding: 60px 15px;
+    }
+}
+/* Navbar Container */
+/* header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+} */
+
+/* Navigation */
+/* nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+ */
+/* Responsive Navbar */
+/* .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    color: white;
+    border: none;
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 15px 0;
+    } */
+
+/*     nav ul li {
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.open ul {
+        display: flex;
+    }
+}
+ */
 /* Header and navigation */
 /* header {
     display: flex;
