@@ -1,4 +1,37 @@
-/* ------------------ Global Styles ------------------ */
+
+/* ------------------ G/* General reset to avoid overflow */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default body overflow if not needed */
+body, html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Ensure all sections fit well */
+section {
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* Avoid unexpected space from ul/li */
+ul {
+  margin-bottom: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Final content spacing to avoid last item cut */
+body::after {
+  content: "";
+  display: block;
+  height: 80px;
+}
+lobal Styles ------------------ */
 * {
   margin: 0;
   padding: 0;
