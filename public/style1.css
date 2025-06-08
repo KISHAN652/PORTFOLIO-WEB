@@ -1,149 +1,116 @@
-/* General Reset */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-/* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
     background: white;
     color: black;
-    transition: 0.3s ease-in-out;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background: #121212;
-    color: white;
+/* Smooth Animations */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Header */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #ff4c68;
+    text-shadow: 0px 0px 5px rgba(255, 76, 104, 0.5);
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
     background: #ff4c68;
     color: white;
-}
-
-.logo {
-    font-size: 20px;
     font-weight: bold;
-}
-
-/* Dark Mode Button */
-.dark-mode-btn {
-    padding: 10px 15px;
-    background: #333;
-    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
-.dark-mode-btn:hover {
-    background: #555;
+button:hover {
+    background: #e8435b;
+    box-shadow: 0px 4px 12px rgba(255, 76, 104, 0.5);
+    transform: scale(1.05);
 }
 
 /* Hero Section */
 #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    padding: 50px 20px;
-    background: #f8f8f8;
-}
-
-/* Portfolio Buttons */
-.cv-btn, .hire-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.cv-btn {
-    background: #ff4c68;
+    height: 100vh;
+    background: url("background.jpg") no-repeat center/cover;
     color: white;
-}
-
-.hire-btn {
-    background: #333;
-    color: white;
-}
-
-.cv-btn:hover, .hire-btn:hover {
-    opacity: 0.8;
-}
-
-/* Projects Grid */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
 }
 
 /* Project Cards */
 .project-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
     padding: 15px;
-    background: white;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Project Images */
-.project-image {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: opacity 0.3s ease-in-out;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.project-card:hover .project-image {
-    opacity: 0.9;
-}
-
-/* Skills Progress Bars */
-.progress {
-    width: 100%;
-    background: #ddd;
-    height: 10px;
-    border-radius: 5px;
-    position: relative;
-}
-
-.bar {
-    height: 100%;
-    background: #ff4c68;
-    width: 0;
-    border-radius: 5px;
-    transition: width 1s ease-in-out;
-}
-
-.html { width: 90%; }
-.css { width: 60%; }
-.js { width: 20%; }
-.python { width: 40%; }
-
-.animate-bars .bar {
-    animation: fillBars 2s forwards;
-}
-
-@keyframes fillBars {
-    from { width: 0; }
-    to { width: 100%; }
+    section {
+        width: 95%;
+        padding: 60px 15px;
+    }
 }
