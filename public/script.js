@@ -1,125 +1,26 @@
-// document.getElementById("contactForm").addEventListener("submit", function (e) {
-//     e.preventDefault();
+// Dark Mode Toggle with Animation
+document.getElementById("darkModeToggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
 
-//     const name = document.querySelector("input[name='name']").value.trim();
-//     const email = document.querySelector("input[name='email']").value.trim();
-//     const message = document.querySelector("textarea[name='message']").value.trim();
+    // Apply fade effect on transition
+    document.body.style.transition = "background 0.5s ease-in-out, color 0.5s ease-in-out";
 
-//     if (!name || !email || !message) {
-//         alert("Please fill in all fields.");
-//         return;
-//     }
+    // Animated button feedback
+    this.style.transform = "scale(1.1)";
+    setTimeout(() => { this.style.transform = "scale(1)"; }, 200);
 
-    // Send data to backend
-//     fetch("/contact", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ name, email, message }),
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         alert(data.message);
-//     })
-//     .catch(error => {
-//         console.error("Error:", error);
-//         alert("Failed to send message.");
-//     });
-// });
-
-// Smooth scrolling for navigation
-document.querySelectorAll("nav ul li a").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-        });
-    });
+    // Save theme preference
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
 });
-// 
 
-// document.getElementById("contactForm").addEventListener("submit", async function (e) {
-//     e.preventDefault(); // Prevent page reload
+// Load previous theme on refresh
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+};
 
-//     const name = document.querySelector("input[name='name']").value.trim();
-//     const email = document.querySelector("input[name='email']").value.trim();
-//     const message = document.querySelector("textarea[name='message']").value.trim();
-
-//     if (!name || !email || !message) {
-//         alert("❌ Please fill in all fields.");
-//         return;
-//     }
-
-//     try {
-//         const response = await fetch("/send-message", {
-//             method: "POST",
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify({ name, email, message }),
-//         });
-
-//         const result = await response.json();
-//         alert(result.message); // ✅ Should show "Message sent successfully!"
-
-//         document.getElementById("contactForm").reset();
-//     } catch (error) {
-//         console.error("❌ Error sending message:", error);
-//         alert("Something went wrong!");
-//     }
-// });
-// document.getElementById("contactForm").addEventListener("submit", async function (e) {
-//     e.preventDefault(); // Stop page reload
-
-//     // Get user input values
-//     const name = document.querySelector("input[name='name']").value.trim();
-//     const email = document.querySelector("input[name='email']").value.trim();
-//     const message = document.querySelector("textarea[name='message']").value.trim();
-
-//     // Validate fields before sending
-//     if (!name || !email || !message) {
-//         alert("❌ Please fill in all fields.");
-//         return;
-//     }
-
-//     console.log("✅ Sending Data:", { name, email, message });
-
-//     try {
-//         const response = await fetch("http://localhost:3000/send-message", {
-//             method: "POST",
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify({ name, email, message }),
-//         });
-
-//         console.log("🔍 Checking server response...");
-
-//         // Check if response is OK (Status 200-299)
-//         if (!response.ok) {
-//             console.error("❌ Server Response Error:", response.status);
-
-//             // Try to extract JSON error if possible
-//             let errorData;
-//             try {
-//                 errorData = await response.json();
-//             } catch (jsonError) {
-//                 console.error("❌ JSON Parsing Error:", jsonError);
-//                 errorData = { error: "Unknown error (Possibly an HTML response or server issue)." };
-//             }
-
-//             alert(`Failed to send message: ${errorData.error || "Unknown Error"}`);
-//             return;
-//         }
-
-//         const result = await response.json();
-//         console.log("✅ Server Response:", result);
-//         alert(result.message); // Should show "Message sent successfully!"
-
-//         // Reset form fields after submission
-//         document.getElementById("contactForm").reset();
-//     } catch (error) {
-//         console.error("❌ Fetch Error:", error);
-//         alert(`Something went wrong! Error: ${error.message}`);
-//     }
-// });
-
-// Scroll to Top Button
+// Scroll to Top Button Enhancement
 const scrollBtn = document.createElement("button");
 scrollBtn.innerText = "↑";
 scrollBtn.id = "scrollTopBtn";
@@ -134,12 +35,15 @@ scrollBtn.style.padding = "10px";
 scrollBtn.style.borderRadius = "50%";
 scrollBtn.style.display = "none";
 scrollBtn.style.cursor = "pointer";
+scrollBtn.style.transition = "opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
         scrollBtn.style.display = "block";
+        scrollBtn.style.opacity = "1";
     } else {
-        scrollBtn.style.display = "none";
+        scrollBtn.style.opacity = "0";
+        setTimeout(() => { scrollBtn.style.display = "none"; }, 300);
     }
 });
 
@@ -147,7 +51,7 @@ scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Smooth scrolling for navigation
+// Smooth scrolling for navigation links
 document.querySelectorAll("nav ul li a").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -157,73 +61,10 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
     });
 });
 
-// Fade-in effect for sections
-document.addEventListener("scroll", function () {
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-        const position = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (position < windowHeight * 0.85) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-        }
-    });
-});
+// Trigger bar animations when the skills section is in view
 document.addEventListener("scroll", function () {
     const skillsSection = document.getElementById("skills");
-    const position = skillsSection.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (position < windowHeight * 0.85) {
+    if (skillsSection.getBoundingClientRect().top < window.innerHeight * 0.85) {
         skillsSection.classList.add("animate-bars");
     }
 });
-// document.getElementById("contactForm").addEventListener("submit", function (e) {
-//     e.preventDefault();
-
-//     const name = document.querySelector("input[name='name']").value.trim();
-//     const email = document.querySelector("input[name='email']").value.trim();
-//     const message = document.querySelector("textarea[name='message']").value.trim();
-
-//     if (!name || !email || !message) {
-//         alert("Please fill in all fields.");
-//         return;
-//     }
-
-//     fetch("/contact", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ name, email, message }),
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         alert("✅ Thank you, " + name + "! Your message has been sent.");
-//         document.getElementById("contactForm").reset();
-//     })
-//     .catch(error => {
-//         console.error("Error:", error);
-//         alert("❌ Failed to send message.");
-//     });
-// });
-document.getElementById("darkModeToggle").addEventListener("click", function () {
-    // Smooth fade effect for mode change
-    document.body.classList.toggle("dark-mode");
-    document.body.style.transition = "background 0.5s ease-in-out, color 0.5s ease-in-out";
-
-    // Save preference in local storage
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
-});
-
-// Load previous theme on page refresh with animation
-window.onload = function () {
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-    }
-};
-
-
-
