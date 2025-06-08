@@ -33,10 +33,6 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    position: relative;
-}
-
 nav ul li a {
     color: black;
     text-decoration: none;
@@ -93,73 +89,6 @@ nav ul li a:hover {
     }
 }
 
-/* Dark Mode */
-.dark-mode {
-    background: #121212;
-    color: white;
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-
-/* Dark Mode Navbar */
-.dark-mode header {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-}
-
-.dark-mode nav ul li a {
-    color: white !important;
-}
-
-.dark-mode nav ul li a:hover {
-    color: #ff4c68;
-}
-
-/* Dark Mode Sections */
-.dark-mode section {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    border-radius: 8px;
-}
-
-/* Fix Font Visibility */
-body:not(.dark-mode) header nav ul li a {
-    color: black !important;
-}
-
-body:not(.dark-mode) #skills .skill span,
-body:not(.dark-mode) #projects h2,
-body:not(.dark-mode) #projects p,
-body:not(.dark-mode) #contact {
-    color: black !important;
-}
-
-/* Button Styles */
-button,
-.cta,
-.cv-btn,
-.hire-btn {
-    padding: 12px 20px;
-    background: #ff4c68;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 12px rgba(255, 76, 104, 0.3);
-}
-
-/* Button Hover Effects */
-button:hover,
-.cta:hover,
-.cv-btn:hover,
-.hire-btn:hover {
-    background: #e8435b;
-    box-shadow: 0px 6px 18px rgba(255, 76, 104, 0.5);
-    transform: scale(1.05);
-}
-
 /* Sections */
 section {
     padding: 80px 20px;
@@ -172,14 +101,6 @@ section {
     section {
         width: 95%;
         padding: 60px 15px;
-    }
-
-    button,
-    .cta,
-    .cv-btn,
-    .hire-btn {
-        width: 90%;
-        font-size: 16px;
     }
 }
 
@@ -223,7 +144,15 @@ section {
 #projects {
     padding: 60px 20px;
     text-align: center;
-    background: #1a1a1a;
+    background: white;
+    color: black !important;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Fix Project Font Visibility */
+body:not(.dark-mode) #projects h2,
+body:not(.dark-mode) #projects p {
+    color: black !important;
 }
 
 /* Project Card */
@@ -245,7 +174,73 @@ section {
 #contact {
     padding: 60px 20px;
     text-align: center;
-    background: #1a1a1a;
-    color: white;
+    background: white;
+    color: black !important;
     border-radius: 10px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Fix Contact Section Font Visibility */
+body:not(.dark-mode) #contact h2,
+body:not(.dark-mode) #contact p {
+    color: black !important;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: white;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Dark Mode Sections */
+.dark-mode section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Dark Mode Navbar */
+.dark-mode header {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.dark-mode nav ul li a {
+    color: white !important;
+}
+
+.dark-mode nav ul li a:hover {
+    color: #ff4c68;
+}
+
+/* Dark Mode Text */
+.dark-mode-text {
+    color: #ddd !important;
+}
+
+/* Dark Mode Buttons */
+.dark-mode button {
+    background: white;
+    color: #121212;
+}
+
+.dark-mode button:hover {
+    background: #ddd;
+}
+
+/* Fix Button Visibility */
+body:not(.dark-mode) .cta,
+body:not(.dark-mode) .cv-btn,
+body:not(.dark-mode) .hire-btn {
+    background: #ff4c68;
+    color: white !important;
+}
+
+body:not(.dark-mode) .cta:hover,
+body:not(.dark-mode) .cv-btn:hover,
+body:not(.dark-mode) .hire-btn:hover {
+    background: #e8435b;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
