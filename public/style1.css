@@ -212,6 +212,42 @@ nav ul li a:hover {
 .dark-mode nav ul li a:hover {
     color: #ff4c68;
 }
+/* Dark Mode Styling */
+.dark-mode {
+    background: #121212;
+    color: white;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Dark Mode Sections */
+.dark-mode section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Dark Mode Navbar */
+.dark-mode header {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+/* Dark Mode Text */
+.dark-mode-text {
+    color: #ddd !important;
+}
+
+/* Dark Mode Buttons */
+.dark-mode button {
+    background: white;
+    color: #121212;
+}
+
+.dark-mode button:hover {
+    background: #ddd;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
