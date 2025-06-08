@@ -11,9 +11,69 @@ body {
     color: white;
     text-align: center;
 }
+/* Navbar Container */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Navbar */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    color: white;
+    border: none;
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.open ul {
+        display: flex;
+    }
+}
 
 /* Header and navigation */
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -26,8 +86,8 @@ header {
     font-size: 24px;
     font-weight: bold;
 }
-
-nav ul {
+ */
+/* nav ul {
     list-style: none;
     display: flex;
 }
@@ -45,7 +105,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #ff4c68;
 }
-
+ */
 /* Hero Section */
 #hero {
     display: flex;
@@ -118,7 +178,7 @@ button:hover {
     }
 }
 /* Navbar Styling */
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -126,8 +186,8 @@ header {
     position: fixed;
     width: 100%;
     z-index: 100;
-}
-
+} */
+/* 
 nav ul {
     list-style: none;
     display: flex;
@@ -143,7 +203,7 @@ nav ul li a {
     font-weight: bold;
     position: relative;
     transition: color 0.3s ease-in-out;
-}
+} */
 
 /* Hover Effects */
 nav ul li a:hover {
@@ -333,6 +393,29 @@ body {
     background: #e8435b;
     box-shadow: 0px 4px 20px rgba(255, 76, 104, 0.6);
     transform: scale(1.05);
+}
+/* Modern Dark Mode Toggle */
+.dark-mode-btn {
+    padding: 12px;
+    background: linear-gradient(to right, #444, #222);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode-btn:hover {
+    background: #555;
+}
+
+/* Adjust Dark Mode for Navbar */
+.dark-mode header {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.dark-mode .menu-toggle {
+    color: white;
 }
 
 /* Responsive Font Adjustments */
