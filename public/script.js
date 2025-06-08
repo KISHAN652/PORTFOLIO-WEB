@@ -68,3 +68,26 @@ document.addEventListener("scroll", function () {
         skillsSection.classList.add("animate-bars");
     }
 });
+// Mobile Navbar Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+});
+
+// Dark Mode Toggle
+document.getElementById("darkModeToggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    // Save preference in local storage
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+});
+
+// Load Dark Mode Preference
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+};
+
