@@ -261,6 +261,44 @@ body:not(.dark-mode) a,
 body:not(.dark-mode) button {
     color: black !important;
 }
+/* Default Light Mode */
+body {
+    background: white;
+    color: black;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Fix Navbar Font Visibility in Light Mode */
+body:not(.dark-mode) header nav ul li a {
+    color: black !important;
+}
+
+/* Fix Skills Section Font Visibility */
+body:not(.dark-mode) #skills .skill span {
+    color: black !important;
+}
+
+/* Fix Project Section Font Visibility */
+body:not(.dark-mode) #projects h2,
+body:not(.dark-mode) #projects p {
+    color: black !important;
+}
+
+/* Fix Buttons Visibility in Light Mode */
+body:not(.dark-mode) .cta,
+body:not(.dark-mode) .cv-btn,
+body:not(.dark-mode) .hire-btn {
+    background: #ff4c68;
+    color: white !important;
+}
+
+body:not(.dark-mode) .cta:hover,
+body:not(.dark-mode) .cv-btn:hover,
+body:not(.dark-mode) .hire-btn:hover {
+    background: #e8435b;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
