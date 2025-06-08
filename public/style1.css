@@ -247,7 +247,20 @@ nav ul li a:hover {
 .dark-mode button:hover {
     background: #ddd;
 }
+/* Dark Mode Text */
+.dark-mode-text {
+    color: #ddd !important;
+}
 
+/* Restore Font Visibility in Light Mode */
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3,
+body:not(.dark-mode) p,
+body:not(.dark-mode) a,
+body:not(.dark-mode) button {
+    color: black !important;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
